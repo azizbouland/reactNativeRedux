@@ -6,9 +6,6 @@ import React from 'react';
 import { createStore } from 'redux';
 import rootReducer from './reducers'
 import { Provider } from 'react-redux';
-import { name } from './app.json';
-
-// STORE
 
 // ACTION
 const increment = () => {
