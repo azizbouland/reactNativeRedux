@@ -28,6 +28,11 @@ export default function App() {
           </Button>
         </View>
       </View>
+      < View style={{ marginTop: 40 }}>
+        <Button
+          title="Login">
+        </Button>
+      </View>
 
       <StatusBar style="auto" />
     </View>
