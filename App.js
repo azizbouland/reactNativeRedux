@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './actions'
+import { increment, decrement, login } from './actions'
 
 export default function App() {
   const counter = useSelector(state => state.counter);
@@ -28,11 +28,21 @@ export default function App() {
           </Button>
         </View>
       </View>
-      < View style={{ marginTop: 40 }}>
+      {isLogged ? (< View style={{ marginTop: 40 }}>
         <Button
-          title="Login">
+          onPress={() => dispatch(login())}
+          title="Logout"
+          backgroundColor="green">
         </Button>
-      </View>
+      </View>) :
+        < View style={{ marginTop: 40 }}>
+          <Button
+            onPress={() => dispatch(login())}
+            title="Login">
+          </Button>
+        </View>
+      }
+
 
       <StatusBar style="auto" />
     </View>
